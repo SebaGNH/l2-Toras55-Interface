@@ -294,7 +294,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 	switch (a_WindowID)
 	{
 		case "itemCP":
-			if (a_ItemInfo.ID.ClassID == 5592 || InStr( a_ItemInfo.Name, "Greater CP Potion" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 5592 || InStr( a_ItemInfo.Name, "Greater CP Potion" ) > -1) //Pota de CP sumoneable
 			{
 				idCP = a_ItemInfo.ID;
 				hCP.AddItem(a_ItemInfo);
@@ -309,7 +309,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 				MessageBox("Not a GCP potion!");
 		break;
 		case "itemHP":
-			if (a_ItemInfo.ID.ClassID == 1539 || InStr( a_ItemInfo.Name, "Greater Healing Potion" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 1539 || a_ItemInfo.ID.ClassID == 8639 || a_ItemInfo.ID.ClassID == 8627 || InStr( a_ItemInfo.Name, "Greater Healing Potion" ) > -1) //Pota blanca de hp
 			{
 				hHP.AddItem(a_ItemInfo);
 				idHP = a_ItemInfo.ID;
@@ -325,7 +325,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 				MessageBox("Not a GHP potion!");
 		break;
 		case "itemMP":
-			if (a_ItemInfo.ID.ClassID == 728 || InStr( a_ItemInfo.Name, "Mana Potion" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 728 || InStr( a_ItemInfo.Name, "Mana Potion" ) > -1) //Pota de maná 
 			{
 				hMP.AddItem(a_ItemInfo);
 				idMP = a_ItemInfo.ID;
@@ -340,7 +340,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 				MessageBox("Not a Mana potion!");
 		break;
 		case "itemQHP":
-			if (a_ItemInfo.ID.ClassID == 1540 || InStr( a_ItemInfo.Name, "Quick Healing Potion" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 1540 || a_ItemInfo.ID.ClassID == 8639 || a_ItemInfo.ID.ClassID == 8627 || InStr( a_ItemInfo.Name, "Quick Healing Potion" ) > -1) //Botellita grande de HP - 8639 es Elixir of CP (S-Grade) - 8627 es Elixir of Life (S-Grade)
 			{
 				hQHP.AddItem(a_ItemInfo);
 				idQHP = a_ItemInfo.ID;
@@ -355,7 +355,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 				MessageBox("Not a QHP potion!");
 		break;
 		case "itemSCP":
-			if (a_ItemInfo.ID.ClassID == 5591 || InStr( a_ItemInfo.Name, "CP Potion" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 5591 || a_ItemInfo.ID.ClassID == 8639 || a_ItemInfo.ID.ClassID == 8627 || InStr( a_ItemInfo.Name, "CP Potion" ) > -1) //Mini CP pot
 			{
 				hSCP.AddItem(a_ItemInfo);
 				idSCP = a_ItemInfo.ID;
@@ -370,7 +370,7 @@ function OnDropItem( String a_WindowID, ItemInfo a_ItemInfo, int X, int Y)
 				MessageBox("Not a CP potion!");
 		break;
 		case "itemSouls":
-			if (a_ItemInfo.ID.ClassID == 10410 || InStr( a_ItemInfo.Name, "Full Bottle of Souls" ) > -1)
+			if (a_ItemInfo.ID.ClassID == 10410 || InStr( a_ItemInfo.Name, "Full Bottle of Souls" ) > -1) // Botella 5 almas
 			{
 				hS.AddItem(a_ItemInfo);
 				idS = a_ItemInfo.ID;
@@ -1122,9 +1122,9 @@ function OnClickExpand()
 	local Rect wSize;
 	
 	wSize = Me.GetRect();
-	if (wSize.nHeight == 186)
+	if (wSize.nHeight == 90) //186
 	{
-		Me.SetWindowSize(wSize.nWidth, 90);
+		Me.SetWindowSize(wSize.nWidth, 186); //90
 		tDivider.HideWindow();
 		hQHP.HideWindow();
 		hSCP.HideWindow();
@@ -1146,7 +1146,7 @@ function OnClickExpand()
 	}
 	else
 	{
-		Me.SetWindowSize(wSize.nWidth, 186);
+		Me.SetWindowSize(wSize.nWidth, 90); //186
 		tDivider.ShowWindow();
 		hQHP.ShowWindow();
 		hSCP.ShowWindow();
