@@ -448,10 +448,10 @@ function OnClickButton( string a_strID )
 	case "optionBtn":
 		OptionBtnShow();
 		break;
-	case "closeBtn":
+	case "closeBtn": // Cruz para cerrar
 		Me.HideWindow();
 		break;
-	case "btnLock":
+	case "btnLock": // botón para blockear
 		OnLockButton();
 		break;
 	case "btnUnLock":

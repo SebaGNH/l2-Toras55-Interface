@@ -687,7 +687,7 @@ function OnClickCheckBox(string strID)
 			OnClickCheck(c_enableDebuffAlert,"DebuffAlert");
 		break;
 		case "enableBigBuff":
-			if (c_enableBigBuff.IsChecked())
+			if (!c_enableBigBuff.IsChecked())
 			{
 				s_handle.SetIconSize(20);
 				SetINIInt("Buff Control", "Size", 20, "PatchSettings");
