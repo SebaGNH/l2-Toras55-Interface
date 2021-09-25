@@ -1122,9 +1122,9 @@ function OnClickExpand()
 	local Rect wSize;
 	
 	wSize = Me.GetRect();
-	if (wSize.nHeight == 90) //186
+	if (wSize.nHeight == 186) //186
 	{
-		Me.SetWindowSize(wSize.nWidth, 186); //90
+		Me.SetWindowSize(wSize.nWidth, 90); //90
 		tDivider.HideWindow();
 		hQHP.HideWindow();
 		hSCP.HideWindow();
@@ -1146,7 +1146,7 @@ function OnClickExpand()
 	}
 	else
 	{
-		Me.SetWindowSize(wSize.nWidth, 90); //186
+		Me.SetWindowSize(wSize.nWidth, 186); //186
 		tDivider.ShowWindow();
 		hQHP.ShowWindow();
 		hSCP.ShowWindow();
