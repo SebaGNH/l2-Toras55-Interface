@@ -5,6 +5,7 @@
 #2
 
 #4  AutoPotions y FlexOptionWnd actualizados
+"1125"  	if (wSize.nHeight == 186) //186
 
 #5
 "235"	b_gotLock = false;
